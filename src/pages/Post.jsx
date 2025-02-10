@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config";
 import { Button, Container } from "../components";
@@ -45,7 +45,7 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button bgColor="bg-blue-500" className="mr-3">
                                     Edit
                                 </Button>
                             </Link>
@@ -56,9 +56,9 @@ export default function Post() {
                     )}
                 </div>
                 <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                    <h1 className="text-2xl font-bold text-white">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="browser-css text-white">
                     {parse(post.content)}
                     </div>
             </Container>
